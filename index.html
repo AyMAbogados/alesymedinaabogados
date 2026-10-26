@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Alés y Medina Abogados · Málaga</title>
+<meta name="description" content="Alés y Medina Abogados. Asesoramiento jurídico en Málaga con actuación en todo el territorio nacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#fff;--surface:#f3f3f1;--ink:#111;--muted:#54585e;--line:#d8d9dc;--red:#c8102e;
+  --font:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 100px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+p,ul,ol{margin:0}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+
+/* Cabecera */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:300;font-size:1.05rem;letter-spacing:-.01em}
+.brand svg{width:64px;height:auto;display:block}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav a{display:block;text-decoration:none;font-size:.95rem;font-weight:500;color:var(--muted);padding:8px 14px;position:relative}
+nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover,nav a.on{color:var(--ink)}
+nav a.on::after,nav a:hover::after{transform:scaleX(1)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:13px 24px;border-radius:0;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--ink);font-family:inherit;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn:hover{background:var(--red);border-color:var(--red)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+@media(max-width:900px){
+  .bar{flex-wrap:wrap;height:auto;padding-top:12px;gap:6px 16px}
+  .bar>.btn{display:none}
+  nav{order:3;width:100%;overflow-x:auto;margin:0 -8px;padding-bottom:4px}
+  nav ul{width:max-content}
+}
+
+/* Estructura editorial: barra como en el logotipo */
+section{padding:clamp(64px,9vw,128px) 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,5vw,72px)}
+.sh::before{content:"";position:absolute}
+.rule{height:10px;background:linear-gradient(to right,var(--red) 0 72px,var(--ink) 72px);margin-bottom:clamp(24px,3vw,40px)}
+h2{font-size:clamp(2.8rem,8.5vw,7rem);line-height:.92;letter-spacing:-.045em;font-weight:800;margin:0}
+.sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.1;margin-top:14px;color:var(--muted)}
+h3{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;font-weight:800;margin:0 0 14px}
+.band{background:var(--surface)}
+.dark{background:var(--ink);color:#fff}
+.dark .rule{background:linear-gradient(to right,var(--red) 0 72px,#fff 72px)}
+
+/* Inicio */
+.hero{padding:clamp(32px,5vw,64px) 0 0;text-align:center;background:#fff}
+.mark{display:block;width:min(100%,500px);height:auto;margin:0 auto;color:var(--ink);overflow:visible}
+.beam{transform-box:view-box;transform-origin:160.3px 75.73px;animation:sway 7s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+h1{margin:0;font-size:0;line-height:0}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(48px,7vw,88px);border-top:1px solid var(--ink);font-weight:500;font-size:.95rem}
+.caps span{padding:16px 0}
+.caps span:nth-child(2){text-align:center}.caps span:nth-child(3){text-align:right}
+.caps span::before{content:"";display:inline-block;width:8px;height:8px;background:var(--red);margin-right:10px}
+.caps span:nth-child(3)::before{display:none}.caps span:nth-child(3)::after{content:"";display:inline-block;width:8px;height:8px;background:var(--red);margin-left:10px}
+@media(max-width:600px){.caps{grid-template-columns:1fr}.caps span,.caps span:nth-child(n){text-align:left}.caps span:nth-child(3)::before{display:inline-block}.caps span:nth-child(3)::after{display:none}}
+
+/* Cinta de áreas */
+.marquee{overflow:hidden;background:var(--ink);color:#fff;padding:clamp(18px,2.4vw,28px) 0}
+.mq{display:flex;width:max-content;animation:mq 60s linear infinite}
+.marquee:hover .mq{animation-play-state:paused}
+.mq span{font-size:clamp(1.8rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1;white-space:nowrap;display:flex;align-items:center}
+.mq span::after{content:"";width:.28em;height:.28em;background:var(--red);margin:0 .8em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px #fff}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* Presentación */
+.panels{display:flex;gap:clamp(20px,3vw,48px)}
+.panel{flex:1;border-top:4px solid var(--line);padding-top:24px;transition:flex .55s cubic-bezier(.3,.7,.2,1),border-color .3s}
+.panel.on{flex:1.7;border-color:var(--red)}
+.panel p{color:#33363b;font-size:1.12rem;line-height:1.65}
+.panel h3{font-size:clamp(1.7rem,2.6vw,2.2rem);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:16px 0}
+.chips li{border:1px solid var(--ink);padding:4px 14px;font-size:.93rem;font-weight:500;border-radius:999px}
+@media(max-width:860px){.panels{flex-direction:column;gap:36px}.panel.on{flex:1}}
+
+/* Principios (oscuro) */
+.statement{font-family:var(--serif);font-size:clamp(2rem,5.2vw,4.4rem);line-height:1.06;letter-spacing:-.015em;max-width:19em;margin-bottom:clamp(40px,6vw,88px)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px)}
+.tile{border-top:1px solid #4a4c50;padding:28px 0 0;transition:border-color .3s,transform .3s}
+.tile p{color:#c9cbcf;font-size:1.12rem;line-height:1.7}
+.tile strong{font-weight:700;color:#fff;box-shadow:inset 0 -3px 0 var(--red)}
+.tile:hover,.tile:focus-within{border-top-color:var(--red)}
+@media(max-width:860px){.duo{grid-template-columns:1fr}}
+
+/* Servicios */
+.ctrl{display:flex;gap:8px;flex:none}
+.ctrl button{width:52px;height:52px;border:1px solid var(--ink);background:var(--bg);color:var(--ink);font-size:1.3rem;cursor:pointer;transition:background .2s,color .2s,border-color .2s;font-family:inherit}
+.ctrl button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.track{display:flex;gap:clamp(24px,3vw,40px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 0}
+.track::-webkit-scrollbar{display:none}
+.svc{flex:0 0 min(360px,84%);scroll-snap-align:start;border-top:4px solid var(--ink);padding-top:22px;transition:border-color .25s}
+.svc:hover{border-color:var(--red)}
+.svc h3{font-size:1.65rem}
+.svc ul{list-style:none;padding:0;color:#33363b}
+.svc li{padding:11px 0;border-top:1px solid var(--line)}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.rail{height:3px;background:var(--line);margin-top:36px}
+.rail i{display:block;height:100%;width:0;background:var(--red);transition:width .15s}
+
+/* Contacto */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px)}
+.col{border-top:4px solid var(--ink);padding-top:22px;transition:border-color .25s;display:flex;flex-direction:column;gap:14px}
+.col:hover{border-color:var(--red)}
+.col .label{color:var(--muted);font-weight:500}
+.col .val{font-size:clamp(1.3rem,2.3vw,1.9rem);font-weight:800;letter-spacing:-.03em;font-style:normal;line-height:1.2;text-decoration:none;overflow-wrap:anywhere}
+.col a.val:hover{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:3px;text-underline-offset:6px}
+.mapl{margin-top:clamp(28px,4vw,48px)}
+@media(max-width:860px){.three{grid-template-columns:1fr;gap:36px}}
+
+/* Pie */
+footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
+.big{font-size:clamp(2.2rem,8vw,7rem);font-weight:300;letter-spacing:-.04em;line-height:1;margin:0 0 clamp(32px,5vw,64px)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid #4a4c50;padding-top:24px;color:#b9bcc1;font-size:.95rem}
+.foot ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px 24px}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+@media(prefers-reduced-motion:reduce){.beam,.mq{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<path id="gA" d="M34.53 -10.46H15.09L11.6 0H0.71L19.15 -51.9H30.97L48.91 0H37.94ZM31.61 -19.36 24.85 -39.65 18.08 -19.36Z"/>
+<path id="gM" d="M16.37 -40.44V0H5.7V-51.9H21.64L31.04 -10.61L40.15 -51.9H56.24V0H45.56V-40.44L36.38 0H25.7Z"/>
+</defs></svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Alés y Medina Abogados, inicio">
+      <svg viewBox="0 0 324.79 130" aria-hidden="true" fill="currentColor">
+        <use href="#gA" transform="translate(0 61.21)"/><use href="#gM" transform="translate(265.49 61.21)"/>
+        <line x1="0" y1="75.73" x2="320.69" y2="75.73" stroke="currentColor" stroke-width="10"/>
+        <use href="#gA" transform="translate(134.27 127.92)"/>
+      </svg>
+      <span>Alés y Medina Abogados</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#principios">Principios</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="tel:+34951159006">951 159 006</a>
+  </div>
+  <div class="progress" id="pg"></div>
+</header>
+
+<main>
+  <div id="inicio" class="hero">
+    <div class="wrap">
+      <h1 aria-label="Alés y Medina Abogados">
+      <svg class="mark" viewBox="0 0 324.79 178.52" aria-hidden="true" fill="currentColor">
+        <g class="beam">
+          <use href="#gA" transform="translate(0 61.21)"/><use href="#gM" transform="translate(265.49 61.21)"/>
+          <line x1="0" y1="75.73" x2="320.69" y2="75.73" stroke="currentColor" stroke-width="10"/>
+        </g>
+        <use href="#gA" transform="translate(134.27 127.92)"/>
+        <text x="2.6" y="168.52" textLength="318" lengthAdjust="spacingAndGlyphs" font-family="Hanken Grotesk,Helvetica,Arial,sans-serif" font-weight="300" font-size="28.16">Alés y Medina Abogados</text>
+      </svg>
+      </h1>
+      <div class="actions">
+        <a class="btn" href="#servicios">Servicios</a>
+        <a class="btn ghost" href="#contacto">Contacto</a>
+      </div>
+      <div class="caps"><span>Asesoramiento jurídico</span><span>Málaga capital</span><span>Todo el territorio nacional</span></div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="mq"><span>Derecho laboral</span><span>Civil / Mercantil / Penal</span><span>Responsabilidad civil</span><span>Derecho administrativo</span><span>Familia</span><span>Herencias</span><span>Derecho inmobiliario</span><span>Derecho bancario</span><span>Derecho laboral</span><span>Civil / Mercantil / Penal</span><span>Responsabilidad civil</span><span>Derecho administrativo</span><span>Familia</span><span>Herencias</span><span>Derecho inmobiliario</span><span>Derecho bancario</span></div></div>
+
+  <section id="presentacion">
+    <div class="wrap">
+      <div class="rule"></div>
+      <div class="sh"><h2>Presentación</h2></div>
+      <div class="panels" id="panels">
+        <article class="panel on" tabindex="0">
+          <h3>Actuación</h3>
+          <p>Nuestra firma está ubicada en Málaga capital pero nuestro ámbito de actuación abarca todo el territorio nacional, con importantes colaboraciones con otras firmas de igual solvencia.</p>
+        </article>
+        <article class="panel" tabindex="0">
+          <h3>Colaboración</h3>
+          <p>Contamos con un importante equipo de profesionales:</p>
+          <ul class="chips"><li>Psicólogos</li><li>Médicos</li><li>Arquitectos superiores y técnicos</li><li>Tasadores</li></ul>
+          <p>etc., que nos permiten dar un servicio completo a nuestros clientes.</p>
+        </article>
+        <article class="panel" tabindex="0">
+          <h3>Confianza</h3>
+          <p>Realizamos un estudio personalizado de cada caso, dando a nuestros clientes los máximos elementos de juicio para tomar una decisión adecuada a sus intereses. Con ello y con un trabajo basado en la honestidad solemos obtener la confianza y fidelización de nuestros clientes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="principios" class="dark">
+    <div class="wrap">
+      <div class="rule"></div>
+      <div class="sh"><h2>Principios</h2></div>
+      <p class="statement">El tratamiento individualizado de cada caso, asesorando al cliente sobre las diferentes opciones de solución que plantea su problemática personal.</p>
+      <div class="duo">
+        <div class="tile" tabindex="0">
+          <p>Procuramos <strong>soluciones extrajudiciales y amistosas</strong> que, como regla general, suelen ser mucho más adecuadas a las necesidades de los ciudadanos. Si es necesario acudir a la vía judicial se realiza un <strong>estudio de viabilidad</strong> que se expone al cliente en forma clara y precisa, llegando incluso a no aceptar procedimientos judiciales de dudosa viabilidad.</p>
+        </div>
+        <div class="tile" tabindex="0">
+          <p>Tenemos en alta consideración la solvencia económica de nuestros clientes quienes también reciben en relación con los honorarios un <strong>tratamiento personal e individualizado</strong> basado en criterios como la capacidad económica, el resultado obtenido y el trabajo efectivamente realizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="rule"></div>
+      <div class="sh">
+        <div><h2>Servicios</h2><p class="sub">Asesoramiento jurídico</p></div>
+        <div class="ctrl"><button type="button" id="prev" aria-label="Anterior">←</button><button type="button" id="next" aria-label="Siguiente">→</button></div>
+      </div>
+      <div class="track" id="track" tabindex="0" aria-label="Áreas de servicio">
+        <article class="svc"><h3>Derecho laboral</h3>
+          <ul><li>Despidos</li><li>Reclamaciones de cantidad</li><li>Reclamación de derechos</li><li>Incapacidades laborales</li><li>Indemnización por accidentes de trabajo</li></ul></article>
+        <article class="svc"><h3>Civil / Mercantil / Penal</h3>
+          <ul><li>Civil</li><li>Mercantil</li><li>Penal</li></ul></article>
+        <article class="svc"><h3>Responsabilidad civil</h3>
+          <ul><li>Contractual y extracontractual</li><li>Accidentes de tráfico</li><li>Reclamaciones de cantidad</li></ul></article>
+        <article class="svc"><h3>Derecho administrativo</h3>
+          <ul><li>Funcionarios</li><li>Sanciones</li><li>Contratos</li><li>Responsabilidad patrimonial</li></ul></article>
+        <article class="svc"><h3>Familia</h3>
+          <ul><li>Divorcios</li><li>Separaciones</li><li>Modificación de medidas</li><li>Liquidación de sociedad de gananciales</li></ul></article>
+        <article class="svc"><h3>Herencias</h3>
+          <ul><li>Testamentos</li><li>División de herencias</li></ul></article>
+        <article class="svc"><h3>Derecho inmobiliario</h3>
+          <ul><li>Desahucios</li><li>Reclamaciones de renta</li><li>Comunidad de propietarios</li></ul></article>
+        <article class="svc"><h3>Derecho bancario</h3>
+          <ul><li>Cláusulas suelo</li><li>Intereses de demora</li><li>Método 365/360</li><li>Gastos imputados al prestatario de notaría, registro y actos jurídicos documentados</li><li>Comisiones por reclamación de posiciones deudoras</li><li>Vencimiento anticipado</li><li>Etc.</li></ul></article>
+      </div>
+      <div class="rail"><i id="rail"></i></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="band">
+    <div class="wrap">
+      <div class="rule"></div>
+      <div class="sh"><h2>Contacto</h2></div>
+      <div class="three">
+        <div class="col"><span class="label">Dirección</span><address class="val">Pasaje Aránzazu nº 6, 1º-B,<br>29010 - Málaga</address></div>
+        <div class="col"><span class="label">Teléfono</span><a class="val" href="tel:+34951159006">951 159 006</a></div>
+        <div class="col"><span class="label">Mail</span><a class="val" href="mailto:despacho@alesymedinaabogados.es">despacho@alesymedinaabogados.es</a></div>
+      </div>
+      <div class="mapl"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Pasaje+Aranzazu+6+29010+Malaga" target="_blank" rel="noopener">Ver en el mapa</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Alés y Medina Abogados</p>
+    <div class="foot">
+      <div>© <span id="y">2026</span> Alés y Medina Abogados<br>Pasaje Aránzazu nº 6, 1º-B, 29010 - Málaga</div>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li><li><a href="#presentacion">Presentación</a></li><li><a href="#principios">Principios</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var panels=[].slice.call(document.querySelectorAll('.panel'));
+function act(p){panels.forEach(function(x){x.classList.toggle('on',x===p)})}
+panels.forEach(function(p){['mouseenter','focusin','click'].forEach(function(ev){p.addEventListener(ev,function(){act(p)})})});
+var track=document.getElementById('track'),rail=document.getElementById('rail');
+function upd(){rail.style.width=Math.min(100,(track.scrollLeft+track.clientWidth)/track.scrollWidth*100)+'%'}
+function step(d){var c=track.querySelector('.svc');track.scrollBy({left:d*(c.offsetWidth+40),behavior:'smooth'})}
+document.getElementById('prev').onclick=function(){step(-1)};
+document.getElementById('next').onclick=function(){step(1)};
+track.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+var pg=document.getElementById('pg');
+function prog(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;pg.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
+window.addEventListener('scroll',prog,{passive:true});prog();
+var links=[].slice.call(document.querySelectorAll('nav a'));
+var secs=['inicio','presentacion','principios','servicios','contacto'].map(function(id){return document.getElementById(id)});
+function mark(){
+  var y=window.scrollY+160,cur=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});
+  if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)cur=secs.length-1;
+  links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+}
+window.addEventListener('scroll',mark,{passive:true});mark();
+</script>
+</body>
+</html>

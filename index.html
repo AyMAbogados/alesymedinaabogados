@@ -42,11 +42,23 @@ nav a.on::after,nav a:hover::after{transform:scaleX(1)}
 .btn:hover{background:var(--red);border-color:var(--red)}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.burger{display:none;position:relative;width:44px;height:44px;flex:none;border:1px solid var(--ink);background:var(--bg);cursor:pointer;padding:0;transition:background .2s,border-color .2s}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .3s,top .3s,background .2s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:25px}
+.burger:hover{background:var(--red);border-color:var(--red)}
+.burger:hover span{background:#fff}
+header.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+header.open .burger span:nth-child(2){top:20px;transform:rotate(-45deg)}
 @media(max-width:900px){
-  .bar{flex-wrap:wrap;height:auto;padding-top:12px;gap:6px 16px}
+  .bar{height:64px;gap:12px}
   .bar>.btn{display:none}
-  nav{order:3;width:100%;overflow-x:auto;margin:0 -8px;padding-bottom:4px}
-  nav ul{width:max-content}
+  .burger{display:block}
+  nav{position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s ease,visibility .35s}
+  header.open nav{max-height:80vh;visibility:visible}
+  nav ul{flex-direction:column;gap:0;padding:6px clamp(20px,4vw,48px) 14px}
+  nav li+li a{border-top:1px solid var(--line)}
+  nav a{padding:15px 0;font-size:1.1rem}
+  nav a::after{left:0;right:auto;width:28px;bottom:10px}
 }
 
 /* Estructura editorial: barra como en el logotipo */
@@ -144,7 +156,7 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
       </svg>
       <span>Alés y Medina Abogados</span>
     </a>
-    <nav aria-label="Principal">
+    <nav aria-label="Principal" id="menu">
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#presentacion">Presentación</a></li>
@@ -153,6 +165,7 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <a class="btn" href="tel:+34951159006">951 159 006</a>
   </div>
   <div class="progress" id="pg"></div>
@@ -304,6 +317,12 @@ track.addEventListener('scroll',upd,{passive:true});window.addEventListener('res
 var pg=document.getElementById('pg');
 function prog(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;pg.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
 window.addEventListener('scroll',prog,{passive:true});prog();
+var hd=document.querySelector('header'),bg=document.getElementById('burger');
+function menu(o){hd.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+bg.addEventListener('click',function(){menu(!hd.classList.contains('open'))});
+document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+window.addEventListener('resize',function(){if(window.innerWidth>900)menu(false)});
 var links=[].slice.call(document.querySelectorAll('nav a'));
 var secs=['inicio','presentacion','principios','servicios','contacto'].map(function(id){return document.getElementById(id)});
 function mark(){

@@ -67,22 +67,12 @@ h3{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;font-weight:800;margin
 .beam{transform-box:view-box;transform-origin:160.3px 75.73px;animation:sway 7s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
 h1{margin:0;font-size:0;line-height:0}
+.hero-title{margin:clamp(28px,4vw,44px) auto 0;max-width:18em;font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:800;line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
+.hero-sub{margin:18px auto 0;max-width:32em;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.2;color:var(--muted);text-wrap:balance}
 .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
-.caps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(48px,7vw,88px);border-top:1px solid var(--ink);font-weight:500;font-size:.95rem}
-.caps span{padding:16px 0}
-.caps span:nth-child(2){text-align:center}.caps span:nth-child(3){text-align:right}
-.caps span::before{content:"";display:inline-block;width:8px;height:8px;background:var(--red);margin-right:10px}
-.caps span:nth-child(3)::before{display:none}.caps span:nth-child(3)::after{content:"";display:inline-block;width:8px;height:8px;background:var(--red);margin-left:10px}
-@media(max-width:600px){.caps{grid-template-columns:1fr}.caps span,.caps span:nth-child(n){text-align:left}.caps span:nth-child(3)::before{display:inline-block}.caps span:nth-child(3)::after{display:none}}
-
-/* Cinta de áreas */
-.marquee{overflow:hidden;background:var(--ink);color:#fff;padding:clamp(18px,2.4vw,28px) 0}
-.mq{display:flex;width:max-content;animation:mq 60s linear infinite}
-.marquee:hover .mq{animation-play-state:paused}
-.mq span{font-size:clamp(1.8rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1;white-space:nowrap;display:flex;align-items:center}
-.mq span::after{content:"";width:.28em;height:.28em;background:var(--red);margin:0 .8em}
-.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px #fff}
-@keyframes mq{to{transform:translateX(-50%)}}
+.caps{display:flex;justify-content:center;margin-top:clamp(48px,7vw,88px);border-top:1px solid var(--ink);font-weight:500;font-size:.95rem}
+.caps span{padding:16px 0;display:flex;align-items:center;gap:10px}
+.caps span::before,.caps span::after{content:"";display:inline-block;width:8px;height:8px;background:var(--red)}
 
 /* Presentación */
 .panels{display:flex;gap:clamp(20px,3vw,48px)}
@@ -90,18 +80,15 @@ h1{margin:0;font-size:0;line-height:0}
 .panel.on{flex:1.7;border-color:var(--red)}
 .panel p{color:#33363b;font-size:1.12rem;line-height:1.65}
 .panel h3{font-size:clamp(1.7rem,2.6vw,2.2rem);margin-bottom:18px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:16px 0}
-.chips li{border:1px solid var(--ink);padding:4px 14px;font-size:.93rem;font-weight:500;border-radius:999px}
 @media(max-width:860px){.panels{flex-direction:column;gap:36px}.panel.on{flex:1}}
 
 /* Principios (oscuro) */
-.statement{font-family:var(--serif);font-size:clamp(2rem,5.2vw,4.4rem);line-height:1.06;letter-spacing:-.015em;max-width:19em;margin-bottom:clamp(40px,6vw,88px)}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px)}
+.duo{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px)}
 .tile{border-top:1px solid #4a4c50;padding:28px 0 0;transition:border-color .3s,transform .3s}
-.tile p{color:#c9cbcf;font-size:1.12rem;line-height:1.7}
-.tile strong{font-weight:700;color:#fff;box-shadow:inset 0 -3px 0 var(--red)}
+.tile h3{font-size:clamp(1.6rem,2.4vw,2.1rem);margin-bottom:18px;color:#fff}
+.tile p{color:#c9cbcf;font-size:1.08rem;line-height:1.7}
 .tile:hover,.tile:focus-within{border-top-color:var(--red)}
-@media(max-width:860px){.duo{grid-template-columns:1fr}}
+@media(max-width:960px){.duo{grid-template-columns:1fr;gap:40px}}
 
 /* Servicios */
 .ctrl{display:flex;gap:8px;flex:none}
@@ -112,6 +99,7 @@ h1{margin:0;font-size:0;line-height:0}
 .svc{flex:0 0 min(360px,84%);scroll-snap-align:start;border-top:4px solid var(--ink);padding-top:22px;transition:border-color .25s}
 .svc:hover{border-color:var(--red)}
 .svc h3{font-size:1.65rem}
+.svc p{color:#33363b;font-size:1rem;line-height:1.6;margin-bottom:20px}
 .svc ul{list-style:none;padding:0;color:#33363b}
 .svc li{padding:11px 0;border-top:1px solid var(--line)}
 .svc li:last-child{border-bottom:1px solid var(--line)}
@@ -119,6 +107,9 @@ h1{margin:0;font-size:0;line-height:0}
 .rail i{display:block;height:100%;width:0;background:var(--red);transition:width .15s}
 
 /* Contacto */
+.intro{max-width:44rem;margin-bottom:clamp(36px,5vw,64px)}
+.intro h3{font-size:clamp(1.8rem,3.4vw,2.8rem);letter-spacing:-.035em;margin-bottom:16px}
+.intro p{color:#33363b;font-size:1.12rem;line-height:1.65}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px)}
 .col{border-top:4px solid var(--ink);padding-top:22px;transition:border-color .25s;display:flex;flex-direction:column;gap:14px}
 .col:hover{border-color:var(--red)}
@@ -134,7 +125,7 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid #4a4c50;padding-top:24px;color:#b9bcc1;font-size:.95rem}
 .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px 24px}
 .foot a{text-decoration:none}.foot a:hover{color:#fff}
-@media(prefers-reduced-motion:reduce){.beam,.mq{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.beam{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -180,15 +171,15 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
         <text x="2.6" y="168.52" textLength="318" lengthAdjust="spacingAndGlyphs" font-family="Hanken Grotesk,Helvetica,Arial,sans-serif" font-weight="300" font-size="28.16">Alés y Medina Abogados</text>
       </svg>
       </h1>
+      <p class="hero-title">Asesoramiento jurídico con compromiso y cercanía.</p>
+      <p class="hero-sub">Defendemos tus intereses y te acompañamos en cada paso, con un enfoque personalizado y transparente.</p>
       <div class="actions">
         <a class="btn" href="#servicios">Servicios</a>
         <a class="btn ghost" href="#contacto">Contacto</a>
       </div>
-      <div class="caps"><span>Asesoramiento jurídico</span><span>Málaga capital</span><span>Todo el territorio nacional</span></div>
+      <div class="caps"><span>Málaga · Ámbito nacional</span></div>
     </div>
   </div>
-
-  <div class="marquee" aria-hidden="true"><div class="mq"><span>Derecho laboral</span><span>Civil / Mercantil / Penal</span><span>Responsabilidad civil</span><span>Derecho administrativo</span><span>Familia</span><span>Herencias</span><span>Derecho inmobiliario</span><span>Derecho bancario</span><span>Derecho laboral</span><span>Civil / Mercantil / Penal</span><span>Responsabilidad civil</span><span>Derecho administrativo</span><span>Familia</span><span>Herencias</span><span>Derecho inmobiliario</span><span>Derecho bancario</span></div></div>
 
   <section id="presentacion">
     <div class="wrap">
@@ -196,18 +187,16 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
       <div class="sh"><h2>Presentación</h2></div>
       <div class="panels" id="panels">
         <article class="panel on" tabindex="0">
-          <h3>Actuación</h3>
-          <p>Nuestra firma está ubicada en Málaga capital pero nuestro ámbito de actuación abarca todo el territorio nacional, con importantes colaboraciones con otras firmas de igual solvencia.</p>
+          <h3>Ámbito de actuación</h3>
+          <p>Con sede en Málaga, ofrecemos asesoramiento y representación jurídica tanto a particulares como a empresas en todo el territorio nacional. Para ello, contamos con la colaboración de profesionales y despachos especializados que nos permiten abordar cada asunto con una perspectiva integral.</p>
         </article>
         <article class="panel" tabindex="0">
           <h3>Colaboración</h3>
-          <p>Contamos con un importante equipo de profesionales:</p>
-          <ul class="chips"><li>Psicólogos</li><li>Médicos</li><li>Arquitectos superiores y técnicos</li><li>Tasadores</li></ul>
-          <p>etc., que nos permiten dar un servicio completo a nuestros clientes.</p>
+          <p>Trabajamos en colaboración con profesionales de distintas disciplinas, como psicólogos, médicos, arquitectos y tasadores. Esta red de especialistas nos permite analizar cada asunto desde diferentes perspectivas y ofrecer una respuesta jurídica más completa.</p>
         </article>
         <article class="panel" tabindex="0">
           <h3>Confianza</h3>
-          <p>Realizamos un estudio personalizado de cada caso, dando a nuestros clientes los máximos elementos de juicio para tomar una decisión adecuada a sus intereses. Con ello y con un trabajo basado en la honestidad solemos obtener la confianza y fidelización de nuestros clientes.</p>
+          <p>Cada caso merece una atención individualizada. Estudiamos sus circunstancias y explicamos al cliente las distintas alternativas, sus posibilidades y sus implicaciones, para que pueda tomar decisiones informadas y con la tranquilidad de contar con un asesoramiento honesto y transparente.</p>
         </article>
       </div>
     </div>
@@ -217,13 +206,18 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
     <div class="wrap">
       <div class="rule"></div>
       <div class="sh"><h2>Principios</h2></div>
-      <p class="statement">El tratamiento individualizado de cada caso, asesorando al cliente sobre las diferentes opciones de solución que plantea su problemática personal.</p>
       <div class="duo">
         <div class="tile" tabindex="0">
-          <p>Procuramos <strong>soluciones extrajudiciales y amistosas</strong> que, como regla general, suelen ser mucho más adecuadas a las necesidades de los ciudadanos. Si es necesario acudir a la vía judicial se realiza un <strong>estudio de viabilidad</strong> que se expone al cliente en forma clara y precisa, llegando incluso a no aceptar procedimientos judiciales de dudosa viabilidad.</p>
+          <h3>Atención personalizada</h3>
+          <p>Cada asunto es diferente. Por eso, analizamos las circunstancias particulares de cada cliente y ofrecemos un asesoramiento adaptado a sus necesidades, intereses y objetivos.</p>
         </div>
         <div class="tile" tabindex="0">
-          <p>Tenemos en alta consideración la solvencia económica de nuestros clientes quienes también reciben en relación con los honorarios un <strong>tratamiento personal e individualizado</strong> basado en criterios como la capacidad económica, el resultado obtenido y el trabajo efectivamente realizado.</p>
+          <h3>Soluciones realistas</h3>
+          <p>Siempre que sea posible, buscamos soluciones extrajudiciales que permitan resolver los conflictos de forma ágil y satisfactoria. Cuando la vía judicial es necesaria, estudiamos previamente la viabilidad del procedimiento y explicamos con claridad las opciones disponibles.</p>
+        </div>
+        <div class="tile" tabindex="0">
+          <h3>Honestidad y transparencia</h3>
+          <p>Creemos que la confianza comienza con la claridad. Por eso, informamos al cliente de las posibilidades reales de su caso y aplicamos honorarios personalizados, atendiendo a las circunstancias económicas, el trabajo realizado y las características de cada asunto.</p>
         </div>
       </div>
     </div>
@@ -238,21 +232,29 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
       </div>
       <div class="track" id="track" tabindex="0" aria-label="Áreas de servicio">
         <article class="svc"><h3>Derecho laboral</h3>
-          <ul><li>Despidos</li><li>Reclamaciones de cantidad</li><li>Reclamación de derechos</li><li>Incapacidades laborales</li><li>Indemnización por accidentes de trabajo</li></ul></article>
-        <article class="svc"><h3>Civil / Mercantil / Penal</h3>
-          <ul><li>Civil</li><li>Mercantil</li><li>Penal</li></ul></article>
+          <p>Asesoramiento y defensa de trabajadores y empresas en conflictos relacionados con las relaciones laborales.</p>
+          <ul><li>Despidos y extinción de contratos.</li><li>Reclamaciones de cantidad.</li><li>Reclamaciones de derechos laborales.</li><li>Incapacidades laborales.</li><li>Indemnizaciones por accidentes de trabajo.</li></ul></article>
+        <article class="svc"><h3>Derecho civil, mercantil y penal</h3>
+          <p>Asesoramiento jurídico y representación en procedimientos relacionados con las relaciones personales, patrimoniales, empresariales y penales.</p>
+          <ul><li>Asuntos civiles y obligaciones contractuales.</li><li>Conflictos mercantiles.</li><li>Asistencia y defensa en procedimientos penales.</li></ul></article>
         <article class="svc"><h3>Responsabilidad civil</h3>
-          <ul><li>Contractual y extracontractual</li><li>Accidentes de tráfico</li><li>Reclamaciones de cantidad</li></ul></article>
+          <p>Reclamación de daños y perjuicios y defensa frente a responsabilidades derivadas de actuaciones propias o de terceros.</p>
+          <ul><li>Responsabilidad contractual y extracontractual.</li><li>Accidentes de tráfico.</li><li>Reclamaciones de daños y perjuicios.</li></ul></article>
         <article class="svc"><h3>Derecho administrativo</h3>
-          <ul><li>Funcionarios</li><li>Sanciones</li><li>Contratos</li><li>Responsabilidad patrimonial</li></ul></article>
-        <article class="svc"><h3>Familia</h3>
-          <ul><li>Divorcios</li><li>Separaciones</li><li>Modificación de medidas</li><li>Liquidación de sociedad de gananciales</li></ul></article>
-        <article class="svc"><h3>Herencias</h3>
-          <ul><li>Testamentos</li><li>División de herencias</li></ul></article>
+          <p>Asesoramiento y defensa frente a actuaciones de las administraciones públicas.</p>
+          <ul><li>Procedimientos relacionados con funcionarios.</li><li>Recursos y sanciones administrativas.</li><li>Contratación pública.</li><li>Responsabilidad patrimonial de la Administración.</li></ul></article>
+        <article class="svc"><h3>Derecho de familia</h3>
+          <p>Asesoramiento jurídico en conflictos familiares, buscando soluciones que protejan los intereses de las partes implicadas.</p>
+          <ul><li>Divorcios y separaciones.</li><li>Modificación de medidas.</li><li>Liquidación de la sociedad de gananciales.</li></ul></article>
+        <article class="svc"><h3>Herencias y sucesiones</h3>
+          <p>Asesoramiento en la planificación, tramitación y resolución de conflictos hereditarios.</p>
+          <ul><li>Testamentos.</li><li>Aceptación y adjudicación de herencias.</li><li>División y reparto de herencias.</li></ul></article>
         <article class="svc"><h3>Derecho inmobiliario</h3>
-          <ul><li>Desahucios</li><li>Reclamaciones de renta</li><li>Comunidad de propietarios</li></ul></article>
+          <p>Asesoramiento jurídico en operaciones y conflictos relacionados con bienes inmuebles y comunidades de propietarios.</p>
+          <ul><li>Desahucios.</li><li>Reclamaciones de rentas.</li><li>Conflictos en comunidades de propietarios.</li></ul></article>
         <article class="svc"><h3>Derecho bancario</h3>
-          <ul><li>Cláusulas suelo</li><li>Intereses de demora</li><li>Método 365/360</li><li>Gastos imputados al prestatario de notaría, registro y actos jurídicos documentados</li><li>Comisiones por reclamación de posiciones deudoras</li><li>Vencimiento anticipado</li><li>Etc.</li></ul></article>
+          <p>Defensa de los derechos de consumidores y usuarios frente a posibles abusos en contratos y productos financieros.</p>
+          <ul><li>Cláusulas suelo.</li><li>Intereses de demora.</li><li>Método de cálculo 365/360.</li><li>Gastos hipotecarios.</li><li>Comisiones por reclamación de posiciones deudoras.</li><li>Cláusulas de vencimiento anticipado.</li></ul></article>
       </div>
       <div class="rail"><i id="rail"></i></div>
     </div>
@@ -262,6 +264,10 @@ footer{background:var(--ink);color:#fff;padding:clamp(48px,7vw,96px) 0 32px}
     <div class="wrap">
       <div class="rule"></div>
       <div class="sh"><h2>Contacto</h2></div>
+      <div class="intro">
+        <h3>Estamos aquí para ayudarte</h3>
+        <p>Si necesitas asesoramiento jurídico o quieres consultar tu caso, puedes ponerte en contacto con nosotros. Estudiaremos tu situación y te orientaremos sobre las posibles vías de actuación.</p>
+      </div>
       <div class="three">
         <div class="col"><span class="label">Dirección</span><address class="val">Pasaje Aránzazu nº 6, 1º-B,<br>29010 - Málaga</address></div>
         <div class="col"><span class="label">Teléfono</span><a class="val" href="tel:+34951159006">951 159 006</a></div>
